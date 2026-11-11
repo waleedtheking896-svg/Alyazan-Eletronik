@@ -1,4 +1,5 @@
 import { db } from "@/db";
+import { ensureSchema } from "@/db/bootstrap";
 import { products } from "@/db/schema";
 
 const P = "/images/alyazen-phones.png";
@@ -26,6 +27,7 @@ const STARTER_PRODUCTS = [
 let pending: Promise<void> | null = null;
 
 async function run() {
+  await ensureSchema();
   const existing = await db.select({ id: products.id }).from(products).limit(1);
   if (existing.length > 0) return;
   await db.insert(products).values(STARTER_PRODUCTS);

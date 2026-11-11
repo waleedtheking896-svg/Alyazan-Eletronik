@@ -1,4 +1,5 @@
 import { db } from "@/db";
+import { ensureSchema } from "@/db/bootstrap";
 import {
   businessProfile,
   inquiries,
@@ -62,6 +63,7 @@ async function runInitialSeed() {
 }
 
 export async function ensureSeeded() {
+  await ensureSchema();
   if (!seedPromise) {
     seedPromise = runInitialSeed().finally(() => {
       seedPromise = null;

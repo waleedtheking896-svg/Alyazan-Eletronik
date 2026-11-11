@@ -30,3 +30,6 @@ npm-debug.log*
 *.pem
 coverage/
 .turbo/
+
+# download package
+*.zip
