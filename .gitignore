@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# production
+build/
+
+# local env files (never upload secrets)
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# hosting
+.vercel
+
+# logs
+*.log
+npm-debug.log*
+
+# misc
+.DS_Store
+*.pem
+coverage/
+.turbo/

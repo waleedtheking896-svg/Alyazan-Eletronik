@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.bg-editorial-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(201, 162, 39, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(201, 162, 39, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Arabic text: use a font with proper Arabic glyphs and right-to-left flow. */
+html:lang(ar) body {
+  font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", "Geeza Pro", Arial, sans-serif;
+  letter-spacing: 0;
+}
+html:lang(ar) .font-mono {
+  font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", Arial, sans-serif;
+}
